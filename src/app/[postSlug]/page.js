@@ -5,13 +5,16 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import styles from "./postSlug.module.css";
 
 async function BlogPost({ params }) {
-  const { content } = await loadBlogPost(`${params.postSlug}`);
+  const post = await loadBlogPost(`${params.postSlug}`);
   // console.log(content);
   return (
     <article className={styles.wrapper}>
-      <BlogHero title="Example post!" publishedOn={new Date()} />
+      <BlogHero
+        title={post.frontmatter.title}
+        publishedOn={post.frontmatter.publishedOn}
+      />
       <div className={styles.page}>
-        <MDXRemote source={content} />
+        <MDXRemote source={post.content} />
       </div>
     </article>
   );
