@@ -1,5 +1,4 @@
 import React from "react";
-import dynamic from "next/dynamic";
 import { loadBlogPost } from "@/helpers/file-helpers";
 import BlogHero from "@/components/BlogHero";
 import { MDXRemote } from "next-mdx-remote/rsc";
