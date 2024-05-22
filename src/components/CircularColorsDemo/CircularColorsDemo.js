@@ -77,7 +77,7 @@ function CircularColorsDemo() {
             }}
           >
             {isPlaying ? <Pause /> : <Play />}
-            <VisuallyHidden>Play</VisuallyHidden>
+            <VisuallyHidden>{isPlaying ? "Pause" : "Play"}</VisuallyHidden>
           </button>
           <button onClick={() => setTimeElapsed(0)}>
             <RotateCcw />
